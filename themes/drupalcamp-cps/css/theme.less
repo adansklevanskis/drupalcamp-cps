@@ -1,0 +1,222 @@
+@import "_mixins.less";
+
+@white: white;
+@light-gray: #eee;
+@darker-gray: #666;
+@primary-color: #2E9FC0;
+@alert-color: #C02E46;
+
+/* =============================================================================
+   MAIN LAYOUT
+   ========================================================================== */
+html {
+  font:normal normal 10px/1.2em helvetica, arial, sans-serif;
+  color:#777;
+  background: @light-gray;
+}
+
+/* =============================================================================
+   BASIC STYLES
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {color: @primary-color;}
+
+/* =============================================================================
+   NAVIGATION
+   ========================================================================== */
+nav {
+background: @primary-color;
+height: 6rem;
+line-height: 6rem;
+padding: 0;
+margin-top: -6rem;
+}
+
+  nav .wrapper{
+  height: 100%;
+  }
+
+.nav-item{
+border: none;
+padding: 0 1rem;
+}
+
+  .nav-item.current,
+  .nav-item.current .nav-link{
+  background: @white;
+  color: @primary-color;
+  }
+
+.nav-link {color: @white;}
+.nav-link:active,
+.nav-link:hover,
+.nav-link:focus{
+text-decoration: underline;
+}
+
+/* =============================================================================
+   HEADER
+   ========================================================================== */
+.header {
+  background-image: url('../img/cover.jpg');
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: 6rem;
+  padding-top: 0;
+}
+.logo-link, .tagline, .call-action-area .price {
+  color:#fff;
+}
+.tagline {font-weight: normal;}
+.call-action-area .price {color:#fddd52;}
+.call-action-area .call-action-link, .btn {
+  background-color: @primary-color;
+  color: @white;
+  letter-spacing: 0.05rem;
+}
+
+.github-link {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 11;
+}
+
+.github-link img {
+  border: 0;
+}
+
+/* =============================================================================
+   CONTENT
+   ========================================================================== */
+.content{
+padding: 0;
+}
+
+.content a {
+color: @alert-color;
+}
+
+.content a:hover, .content a:focus{
+text-decoration: underline;
+}
+
+.content section{
+padding-top: 7rem;
+}
+
+.section-title{
+margin-bottom: 3rem;
+}
+
+/* =============================================================================
+   ABOUT
+   ========================================================================== */
+.about {
+}
+
+/* =============================================================================
+   LOCATION
+   ========================================================================== */
+.location-area {
+  background: #e7e7e7;
+  height: 300px;
+}
+
+/* =============================================================================
+   SPEAKER
+   ========================================================================== */
+.speaker-photo .photo {
+  border-radius: 50%;
+  .transition(all 0.3s ease-out);
+}
+.speech-time {
+  color:#fff;
+  background:#2b2b2b;
+}
+
+/* =============================================================================
+   SCHEDULE
+   ========================================================================== */
+.schedule-tbl {
+  background:#fff;
+}
+.schedule-tbl table {background:#fff;}
+.schedule-tbl td, .schedule-tbl th {border-bottom:1px solid #e7e7e7;}
+.schedule-tbl tbody tr:nth-child(2n+1) {background:#f6f6f6;}
+.schedule-tbl th {color:#2b2b2b;}
+.speakers-company {color:#999;}
+.schedule-slot {color:#2b2b2b;}
+.schedule-tbl tbody tr:hover {background:#fffde1;}
+.schedule-coffee, .schedule-closing, .schedule-lunch, .schedule-other {color:#214f87;}
+
+/* =============================================================================
+   SPONSORS
+   ========================================================================== */
+.sponsor--link, .partner-link {
+  background: #fff;
+}
+.sponsor--link:hover, .sponsor--link:focus, .partner-link:hover, .partner-link:focus {border-color: #f0a303;}
+
+.sponsors-list,
+.partners-list{
+text-align: center;
+}
+
+/* =============================================================================
+   CONTACT
+   ========================================================================== */
+.form input[type=text], .form input[type=email], .form textarea{
+  color: #777;
+  border: 1px solid #e7e7e7;
+  background: #fff;
+}
+.form input[type=text]:focus, .form input[type=email]:focus, .form textarea:focus {border-color:#aaa;outline:0;}
+
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (max-width : 1024px) {
+  .header {
+    background-size: auto 100%;
+  }
+}
+@media only screen and (max-width : 480px) {
+  /* speakers */
+  .speech-title {font-weight: bolder;}
+  .speech-time {
+    color:#2b2b2b;
+    background: transparent;
+    font-weight: bolder;
+  }
+  .github-link { display: none; }
+}
+
+/* =============================================================================
+   Other things
+   ========================================================================== */
+
+.footer{
+background: @darker-gray;
+text-align: center;
+padding: 3rem;
+color: @white;
+font-size: 1.5rem;
+}
+
+.tagline{
+font-size: 3rem;
+}
+
+.logo-image {
+max-width: 60rem;
+margin-bottom: 3rem;
+}
+
+.alert-box{
+padding: 1rem;
+color: @white;
+background-color: @alert-color;
+}
